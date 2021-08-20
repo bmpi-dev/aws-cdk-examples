@@ -40,7 +40,7 @@ sudo systemctl restart code-server@$USER
 
 printf "==> Installing DevOps Tooling (Terraform, Packer, AWS CLI, Java and Maven). \n"
 # Download the script only so you can run it whenever you want.
-wget -qN https://raw.githubusercontent.com/chilcano/how-tos/master/resources/devops_tools_install_v2.sh
+wget -qN https://raw.githubusercontent.com/chilcano/how-tos/main/src/devops_tools_install_v2.sh
 chmod +x devops_tools_install_v2.sh 
 #. devops_tools_install_v2.sh --arch=amd
 
