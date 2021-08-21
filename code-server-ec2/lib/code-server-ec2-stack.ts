@@ -54,6 +54,6 @@ export class CodeServerEc2Stack extends cdk.Stack {
 
     const userData = readFileSync('_assets/scripts/cloud_devops_tools.sh', 'utf-8');
     instance.addUserData( userData );
-    instance.instance.addPropertyOverride('KeyName', 'chilcan0');
+    instance.instance.addPropertyOverride('KeyName', 'code-bmpi');
   }
 }

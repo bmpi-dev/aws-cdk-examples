@@ -66,7 +66,7 @@ To load the bash script, just update your stack editing `lib/code-server-ec2-sta
 [...]
     const userData = readFileSync('custom_assets/scripts/install_tools.sh', 'utf-8');
     instance.addUserData( userData );
-    instance.instance.addPropertyOverride('KeyName', 'chilcan0');
+    instance.instance.addPropertyOverride('KeyName', 'code-bmpi');
 [...]
 ```
 
@@ -83,7 +83,7 @@ If `cdk deploy` went successfully you will get by default a web application (Cod
 
 From your AWS Web Console, get the `Public DNS (IPv4)` or `IPv4 Public IP` about the EC2 instance created, with that information connect to the host through SSH and get the Code-Server's password that generates by default:
 ```sh
-$ ssh ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/chilcan0.pem 
+$ ssh ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/code-bmpi.pem 
 
 ubuntu@ip-10-0-0-117:~$ cat .config/code-server/config.yaml 
 bind-addr: 127.0.0.1:8080
@@ -94,7 +94,7 @@ cert: false
 
 Now, create the SSH tunnel:
 ```sh
-$ ssh -nNT -L 8123:localhost:8080 ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/chilcan0.pem
+$ ssh -nNT -L 8123:localhost:8080 ubuntu@ec2-54-227-165-113.compute-1.amazonaws.com -i ~/Downloads/code-bmpi.pem
 ```  
 
 Finally, open the URL [http://localhost:8123](http://localhost:8123) in your browser, you should see this:  
